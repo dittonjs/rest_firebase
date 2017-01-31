@@ -1,8 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import database from './config/database.js';
 
-class App extends Component {
+class App extends React.Component {
+  componentDidMount(){
+    // database.post('users').
+    //   send({name: 'Joseph Ditton', email: 'something@gmail.com'}).
+    //   end((res)=>{
+    //     console.log(res);
+    //   });
+
+    database.get('users').
+      end((res)=>{
+        debugger;
+      });
+  }
   render() {
     return (
       <div className="App">
